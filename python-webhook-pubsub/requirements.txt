@@ -1,0 +1,2 @@
+google-cloud-pubsub==2.5.0
+asyncws==0.1
