@@ -19,9 +19,11 @@ jobs:
         uses: home-assistant/builder@master
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          IMAGE_NAME: hassio-to-pubsub
+          SOURCE_DIRECTORY: hassio-to-pubsub-source
         with:
           args: |
             --all \
-            --target python-webhook-pubsub \
+            --target $SOURCE_DIRECTORY \
             --docker-hub $DOCKER_USERNAME \
-            --image pub-sub
+            --image $IMAGE_NAME
