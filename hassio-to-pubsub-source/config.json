@@ -10,6 +10,7 @@
   "options": {
     "home_id": null,
     "service_account_json": null,
+    "gcp_project_id": null,
     "filter": {
       "include_domains": [],
       "exclude_domains": [],
@@ -22,6 +23,7 @@
   "schema": {
     "home_id": "str",
     "service_account_json": "str",
+    "gcp_project_id": "str",
     "filter": {
       "include_domains": ["str"],
       "exclude_domains": ["str"],
