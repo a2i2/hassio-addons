@@ -1,66 +1,46 @@
-# Home Assistant Community Add-on: Example
+# Home Assistant to Pub/Sub
 
-This is an example add-on for Home Assistant. When started, it displays a
-random quote every 5 seconds.
-
-It shows off several features and structures like:
-
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.json` and `build.json` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Community Home Assistant Add-ons build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
+This add-on subscribes to events on the Home Assistant websocket
+and pushes them to a Google Cloud Pub/Sub topic.
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
-
-1. Search for the "Example" add-on in the Supervisor add-on store and install it.
-1. Start the "Example" add-on.
-1. Check the logs of the "Example" add-on to see it in action.
+1. Install the [repository](https://github.com/a2i2/hassio-addons)
+   in the Supervisor add-on store.
+1. Open and install the `Home Assistant to Pub/Sub` add-on.
+1. Set the config as described below.
 
 ## Configuration
 
-Eventought this add-on is just an example add-on, it does come with some
-configuration options to play around with.
-
-**Note**: _Remember to restart the add-on when the configuration is changed._
+**Note:** _Remember to restart the add-on when the configuration is changed._
 
 Example add-on configuration:
 
-```yaml
-log_level: info
-seconds_between_quotes: 5
+```
+home_id: my_home
+service_account_json: {}
+filter:
+  include_domains: []
+  exclude_domains: []
+  include_entity_globs: []
+  exclude_entity_globs: []
+  include_entities: []
+  exclude_entities: []
 ```
 
-### Option: `log_level`
+## Running locally
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+This add-on can be run locally by doing the following:
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+1. Make sure Home Assistant is running.
+1. Run `pip3 install --user -r requirements.txt` to install dependencies.
+1. Set the following environment variables:
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+- `HOME_ID`: Unique identifier for the home
+- `SERVICE_ACCOUNT_JSON`: GCP service account JSON content
+- `ACCESS_TOKEN`: Home Assistant personal access token
 
-### Option: `seconds_between_quotes`
-
-Sets the number of seconds between the output of each quote. The value
-must be between `1` and `120` seconds. This value is set to `5` seconds by
-default.
+1. Run `python3 main.py`.
 
 ## Changelog & Releases
 
