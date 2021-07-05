@@ -1,18 +1,36 @@
 {
-  "name": "Example",
-  "version": "de66205",
-  "slug": "example",
-  "description": "Example add-on by Community Home Assistant Add-ons",
-  "url": "https://github.com/a2i2/addon-example",
-  "init": false,
-  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "name": "Home Assistant to Pub/Sub",
+  "version": "d7cd9aa",
+  "slug": "hassio-addon-pubsub",
+  "description": "Publishes Home Assistant events from multiple homes to Google Pub/Sub",
+  "url": "https://github.com/a2i2/hassio-addon-pubsub",
+  "arch": ["aarch64"],
+  "homeassistant_api": true,
   "options": {
-    "log_level": "info",
-    "seconds_between_quotes": 5
+    "home_id": null,
+    "service_account_json": null,
+    "gcp_project_id": null,
+    "filter": {
+      "include_domains": [],
+      "exclude_domains": [],
+      "include_entity_globs": [],
+      "exclude_entity_globs": [],
+      "include_entities": [],
+      "exclude_entities": []
+    }
   },
   "schema": {
-    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
-    "seconds_between_quotes": "int(1,120)"
+    "home_id": "str",
+    "service_account_json": "str",
+    "gcp_project_id": "str",
+    "filter": {
+      "include_domains": ["str"],
+      "exclude_domains": ["str"],
+      "include_entity_globs": ["str"],
+      "exclude_entity_globs": ["str"],
+      "include_entities": ["str"],
+      "exclude_entities": ["str"]
+    }
   },
   "image": "ghcr.io/a2i2/hassio-addon-pubsub/{arch}"
 }
