@@ -1,6 +1,6 @@
 {
   "name": "Example",
-  "version": "14b082e",
+  "version": "de66205",
   "slug": "example",
   "description": "Example add-on by Community Home Assistant Add-ons",
   "url": "https://github.com/a2i2/addon-example",
@@ -14,5 +14,5 @@
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "seconds_between_quotes": "int(1,120)"
   },
-  "image": "ghcr.io/a2i2/example/{arch}"
+  "image": "ghcr.io/a2i2/hassio-addon-pubsub/{arch}"
 }
