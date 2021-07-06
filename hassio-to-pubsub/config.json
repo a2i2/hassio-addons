@@ -1,6 +1,6 @@
 {
   "name": "Home Assistant to Pub/Sub",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "slug": "hassio-to-pubsub",
   "description": "Publishes Home Assistant events from multiple homes to Google Pub/Sub",
   "url": "https://github.com/a2i2/hassio-to-pubsub",
