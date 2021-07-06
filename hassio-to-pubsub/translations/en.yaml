@@ -1,0 +1,14 @@
+---
+configuration:
+  home_id:
+    name: Home ID
+    description: Unique identifier for this home/installation.
+  service_account_json:
+    name: Google Cloud Service Account
+    description: JSON content of a GCP Service Account with "Pub/Sub Publisher" permissions.
+  gcp_project_id:
+    name: Google Cloud Project ID
+    description: ID of the GCP project to which Pub/Sub events should be sent.
+  filter:
+    name: Event filter
+    description: Used for including/excluding particular domains/entity names or globs.

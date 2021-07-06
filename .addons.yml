@@ -1,7 +1,7 @@
 ---
 channel: stable
 addons:
-  hassio-addon-pubsub:
-    repository: a2i2/hassio-addon-pubsub
+  hassio-to-pubsub:
+    repository: a2i2/hassio-to-pubsub
     target: hassio-to-pubsub
-    image: ghcr.io/a2i2/hassio-addon-pubsub/{arch}
+    image: ghcr.io/a2i2/hassio-to-pubsub/{arch}
