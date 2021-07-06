@@ -1,0 +1,7 @@
+---
+channel: stable
+addons:
+  hassio-addon-pubsub:
+    repository: a2i2/hassio-addon-pubsub
+    target: hassio-addon-pubsub
+    image: ghcr.io/a2i2/hassio-addon-pubsub/{arch}
